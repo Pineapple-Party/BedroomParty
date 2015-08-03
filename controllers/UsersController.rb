@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
 		@new_user.save
 
-		redirect to('/bedroom')
+		redirect to('../bedroom')
 	end
 
 end

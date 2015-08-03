@@ -1,6 +1,10 @@
 class BedroomController < ApplicationController
 
-  get '/bedroom' do
+	def test(params)
+		puts params
+	end 
+	
+  get '/' do
     erb :bedroom
   end
 end
