@@ -5,3 +5,4 @@ Dir.glob('./{controllers,models}/*.rb').each {
 }
 
 map('/') { run HomeController }
+map('/users') { run UsersController }
