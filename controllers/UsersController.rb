@@ -19,6 +19,9 @@ class UsersController < ApplicationController
 		erb :registration
 	end
 
+
+
+
 	post '/register' do
 
 		@new_user = User.new
@@ -34,7 +37,7 @@ class UsersController < ApplicationController
 
 		@new_user.save
 
-		erb :registration
+		redirect to('/bedroom')
 	end
 
 end
