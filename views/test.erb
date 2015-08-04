@@ -1,7 +1,11 @@
+<article>
+	<input class="sc-url" type="text" name="url" value ="" placeholder="playlist url">
+		<button class="sc-update">update</button>
+</article>
+
 <section>
 	
-		<input class="sc-url" type="text" name="url" value ="" placeholder="playlist url">
-		<button class="sc-update">update</button>
+		
 </section>
 <script type="text/javascript">
 	$( document ).ready(function() {
@@ -12,10 +16,10 @@
 
 	};	
 
-	var link = $('.sc-url').attr("value");
+	var link = $('.sc-url').prop("value");
 	link = decodeURIComponent(link); 
 
-    var test = $('section')[0]; 
+    var embedLoc = $('section')[0]; 
 
     SC.initialize({
       client_id: '978e422d49a50b92fa915cac4a56e5be'
@@ -23,7 +27,7 @@
 
     $('.sc-update').click(function(){
     	link = decodeURIComponent($('.sc-url').prop("value")); 
-    	updateSong(link, test); 
+    	updateSong(link, embedLoc); 
     }); 
 });
 </script>
