@@ -19,10 +19,10 @@ footer {
 
 .fallingPineapples span {
   display: inline-block;
-  width: 159px;
-  height: 308px;
+  width: 158px;
+  height: 310px;
   margin: -280px 40px 54px -34px;
-  background: url("http://i.imgur.com/OV5w47s.jpg?2");
+  background: url("http://i.imgur.com/rK7RTdCm.png?1");
   -webkit-animation: fallingPineapples 10s infinite linear;
   z-index: -1; }
 

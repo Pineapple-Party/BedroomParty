@@ -15,6 +15,21 @@ class UsersController < ApplicationController
 		erb :login
 	end
 
+	post '/login' do
+		user_name = params[:user_name]
+
+		if self.does_user_exist(user_name) == true
+			user = User.where(:user_name => user_name).first!
+
+			if user.password_hash == BCrypt::Engine.hash_secret(params[:password], user.password_salt)
+				redirect to('../bedroom')
+
+				session[:user] = user
+			end #end if
+		end #end if
+			erb :login
+	end #end post
+
 	get '/register' do
 		erb :registration
 	end
