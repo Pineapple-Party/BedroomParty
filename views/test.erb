@@ -1,0 +1,12 @@
+<section>
+	<form class="sc-update" action="/bedroom/test" method="post">
+		<input type="text" name="url" value="" placeholder="playlist url">
+		<input type="submit" value="update">
+	</form>
+</section>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('section').append(' <%= @embed_info["html"] %> '); 
+});
+</script>
