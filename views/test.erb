@@ -1,12 +1,29 @@
 <section>
-	<form class="sc-update" action="/bedroom/test" method="post">
-		<input type="text" name="url" value="" placeholder="playlist url">
-		<input type="submit" value="update">
-	</form>
+	
+		<input class="sc-url" type="text" name="url" value ="" placeholder="playlist url">
+		<button class="sc-update">update</button>
 </section>
-
 <script type="text/javascript">
-$(document).ready(function() {
-	$('section').append(' <%= @embed_info["html"] %> '); 
+	$( document ).ready(function() {
+
+	function updateSong(song_url, domElement) {
+	
+		SC.oEmbed(song_url, {auto_play: true}, domElement );
+
+	};	
+
+	var link = $('.sc-url').attr("value");
+	link = decodeURIComponent(link); 
+
+    var test = $('section')[0]; 
+
+    SC.initialize({
+      client_id: '978e422d49a50b92fa915cac4a56e5be'
+    });
+
+    $('.sc-update').click(function(){
+    	link = decodeURIComponent($('.sc-url').prop("value")); 
+    	updateSong(link, test); 
+    }); 
 });
 </script>
