@@ -10,38 +10,50 @@ $(document).ready(function() {
 	 		widget.setVolume(80); //set default volume 
 	  	 	console.log('Ready...'); //playlist is loaded & ready
 	 	});
+
+	 		$('.playlist-btn-play').click(function() {
+	 			widget.toggle(); 
+	 		//$('this').attr()  
+	 		}); 
 	 //restart playlist after last song 
 	 //maybe bind to PLAY first and then FINISH nested inside
 
-	 	
-
+	 	var app = app || {}; //namespacing 
+	 	app.current = 0; 
+	 	app.length = 0;
 	 	widget.bind(SC.Widget.Events.PLAY, function() {
-	 		var current = widget.getCurrentSoundIndex(function(song) {
-	 			console.log(song); 	
+	 		widget.getCurrentSoundIndex(function(song) {
+	 			app.current = song;  
+	 			//return song; 	
 	 			}); 
+
+	 		widget.getSounds(function(songs) {
+	 			app.length = (songs.length - 1); 
+	 			//return songs.length; 
+	 		}); 
 	 	});
 
 	 	 widget.bind(SC.Widget.Events.FINISH, function() {
-	 		 	console.log('finished'); 
-	 			widget.skip(0);  
+	 		 	//console.log(app.current);
+	 		 	//console.log(app.length); 
+	 		 	if (app.current === app.length) {
+	 		 		widget.skip(0); 
+	 		 	}
 	 		 });
 	 	
 
 
-	 //on click, load new sc link to widget 
+	 //on click, load new sc link to widget ]
+
+	 	
+
 	 	$('.playlist-btn-updt').click(function() {
 	 		console.log('clicked'); 
 	 		var link = decodeURIComponent($('.playlist-link').prop('value')); 
-	 		console.log(link);
+	 		//console.log(link);
 	  		widget.load(link);
 	 	});
 
-	 	$('.playlist-btn-play').click(function() {
-	 		//toggle play and change icon on click
-	 		console.log('play clicked');
-	 		widget.toggle(); 
-	 		//$('this').attr()  
-	 	}); 
 
 		$('.playlist-btn-sound').click(function() {
 	 		//toggle volume and change icon on click
