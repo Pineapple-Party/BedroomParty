@@ -29,7 +29,8 @@ class BedroomController < ApplicationController
 		end
 
   get '/test' do 
-
+  	@pictures = Picture.find_by params[:id => 1]
+  	puts @pictures.picture_link
 	erb :test 
 	# print the html for the player widget
 	
