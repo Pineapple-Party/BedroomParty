@@ -14,12 +14,14 @@ $(document).ready(function() {
           success: function(data) { 
 
               console.log(data.data.link);
+              return data.data.link;
 
           },
           error: function() { console.log("ERRORZ"); }
       });
   }
-  var src = imgurCall() + ""; 
-  <img src=src>  
+  var imgurr = imgurr || {};
+  imgurr.src = imgurCall(); 
+  console.log(imgurr.src); 
 
 });

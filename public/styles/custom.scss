@@ -13,9 +13,10 @@ form {
 }
 
 footer {
+  width: 400px;
 	position: absolute;
 	top:  90%;
-	left:  50%;
+	left:  35%;
 }
 
 
@@ -69,8 +70,6 @@ opacity: 0;
 }
 }
 
-<<<<<<< HEAD
-
 /*pop up window*/
 
 .popUpwindow {
@@ -79,6 +78,7 @@ opacity: 0;
   width:394px;
 	display: none;
 	margin-top: -300px;
+  margin-left: -150px;
 
 .mood {
   position: fixed;
@@ -96,4 +96,5 @@ opacity: 0;
 
 .player-options {
   display: none;  
+}
 }
