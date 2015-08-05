@@ -1,33 +1,39 @@
-<article>
-	<input class="sc-url" type="text" name="url" value ="" placeholder="playlist url">
-		<button class="sc-update">update</button>
-</article>
+<script src="http://w.soundcloud.com/player/api.js"></script>
 
-<section>
-	
-		
+
+<section class="row">
+  <iframe id="soundcloud_widget"
+      src="http://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/39804767&show_artwork=false&liking=false&sharing=false&auto_play=true"
+      width="420"
+      height="120"
+      frameborder="no"></iframe>
 </section>
-<script type="text/javascript">
-	$( document ).ready(function() {
+<!--mood button --> 
+  <article class="row">
+  	<div class="four columns offset-by-four">
+	  <input class="playlist-link" type="text" name="playlist_link" value="" placeholder="playlist url">
+	  <button class="playlist-btn-updt">update</button>
+	</div>
+  </article>
 
-	function updateSong(song_url, domElement) {
-	
-		SC.oEmbed(song_url, {auto_play: true}, domElement );
+<footer class="row">
+	<div class="four columns offset-by-four">
+		<button class="mood">mood</button>
+		<ul>
+			<li class="playlist-btn-play"> play </li>
+			<li class="playlist-btn-prev"> prev</li>
+			<li class="playlist-btn-next"> next </li>
+			<li class="playlist-btn-sound"> vol </li>
+		</ul>
+	</div>
+</footer>
 
-	};	
+<script type="text/javascript" src="/scripts/app.js"></script>
+<!--end mood button --> 
 
-	var link = $('.sc-url').prop("value");
-	link = decodeURIComponent(link); 
-
-    var embedLoc = $('section')[0]; 
-
-    SC.initialize({
-      client_id: '978e422d49a50b92fa915cac4a56e5be'
-    });
-
-    $('.sc-update').click(function(){
-    	link = decodeURIComponent($('.sc-url').prop("value")); 
-    	updateSong(link, embedLoc); 
-    }); 
-});
-</script>
+  <!--
+  widget.getSounds(function(songs) { 
+     		$(songs).each(function(idx){
+     			arr.push(idx); 
+     		});
+     		return arr;  --> 
