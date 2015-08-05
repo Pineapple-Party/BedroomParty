@@ -12,8 +12,11 @@ form {
 
 footer {
   position: absolute;
+  width: 500px;
   top: 90%;
-  left: 50%; }
+  left: 30%; 
+  margin: 0 auto;
+  }
 
 .fallingPineapples {
   width: 100%;
@@ -56,6 +59,8 @@ footer {
   height: 200px;
   width: 394px;
   display: none;
-  margin-top: -300px; }
+  margin-top: -285px;
+  margin-left: -150px;
+   }
 
 /*# sourceMappingURL=custom.css.map */
