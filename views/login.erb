@@ -17,9 +17,15 @@
 	  	<h2>Login</h2>
       	<form class="login" action="/users/login" method="post">
           <input type="text" name="user_name" value="" placeholder="username or email">
-          <input type="password" name="password" value="" placeholder="password"> <br> 
+          <input type="password" name="password" value="" placeholder="password"> <br>
          <input type="submit" value="login"> <a href="/users/register">not a user?</a>
       </form>
     </article>
   </section>
 </div>
+
+
+<%= @message %>
+<% if session[:user].nil? == false %>
+  Thanks for using hanging out in the bedroom, <strong><%= session[:user].user_name %></strong>.<br>
+<% end %>
