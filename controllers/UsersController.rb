@@ -48,9 +48,9 @@ end
 		newbie.save
 
 		@message = 'Registration Complete!'
-
-		session[:user]
-		return redirect to('../bedroom')
+		user = User.where(:user_name => params[:user_name]).first!
+		session[:user] = user
+		redirect to('../bedroom')
 
 	end
 
