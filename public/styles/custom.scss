@@ -13,7 +13,9 @@ form {
 }
 
 footer {
-	text-align: center;
+	position: absolute;
+	top:  90%;
+	left:  50%;
 }
 
 
@@ -65,4 +67,15 @@ opacity: 1;
 opacity: 0;
 -webkit-transform: translate(150px, 800px) rotateZ(360deg);
 }
+}
+
+
+/*pop up window*/
+
+.popUpwindow {
+  background-color: green;
+	height: 200px;
+  width:394px;
+	display: none;
+	margin-top: -300px;
 }
