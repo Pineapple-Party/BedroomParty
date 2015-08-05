@@ -12,11 +12,8 @@ form {
 
 footer {
   position: absolute;
-  width: 500px;
   top: 90%;
-  left: 30%; 
-  margin: 0 auto;
-  }
+  left: 50%; }
 
 .fallingPineapples {
   width: 100%;
@@ -59,8 +56,16 @@ footer {
   height: 200px;
   width: 394px;
   display: none;
-  margin-top: -285px;
-  margin-left: -150px;
-   }
+  margin-top: -300px; }
+  .popUpwindow .mood {
+    position: fixed;
+    top: 90%;
+    left: 50%; }
+  .popUpwindow #soundcloud_widget {
+    display: none; }
+  .popUpwindow .playlist-update {
+    display: none; }
+  .popUpwindow .player-options {
+    display: none; }
 
 /*# sourceMappingURL=custom.css.map */

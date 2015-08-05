@@ -69,6 +69,7 @@ opacity: 0;
 }
 }
 
+<<<<<<< HEAD
 
 /*pop up window*/
 
@@ -78,4 +79,21 @@ opacity: 0;
   width:394px;
 	display: none;
 	margin-top: -300px;
+
+.mood {
+  position: fixed;
+  top: 90%;
+  left: 50%; 
+}
+
+#soundcloud_widget {
+  display: none; 
+}
+
+.playlist-update {
+  display: none; 
+}
+
+.player-options {
+  display: none;  
 }
