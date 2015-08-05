@@ -2,7 +2,7 @@ class BedroomController < ApplicationController
 
 	def test(params)
 		puts params
-<<<<<<< HEAD
+
 	end
 
 
@@ -28,13 +28,6 @@ class BedroomController < ApplicationController
 
 		end
 
-=======
-	end 
-	
-  get '/' do
-    erb :bedroom
-  end
-
   get '/test' do 
 
 	erb :test 
@@ -42,6 +35,6 @@ class BedroomController < ApplicationController
 	
 	
 end 
->>>>>>> soundcloud
+
 
 end
