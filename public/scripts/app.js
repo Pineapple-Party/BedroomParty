@@ -45,6 +45,9 @@ $(document).ready(function() {
 
 	 //on click, load new sc link to widget ]
 
+	 	$('.mood').click(function() {
+	 		$('.player-options').toggle();
+	 	}); 
 	 	
 
 	 	$('.playlist-btn-updt').click(function() {
