@@ -98,6 +98,7 @@ class BedroomController < ApplicationController
 			@picture.save 
 		end
 		
+		@default = Bedroom.where(env_creator_id)
 		status 200 
 	end 
 		#@pictures = {} #link : bedroom id 
