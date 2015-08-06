@@ -83,7 +83,12 @@ opacity: 0;
   margin-left: -150px;
 	font-weight: bolder;
 	overflow: scroll;
+ 	box-shadow: 0 1px 0 1px #ccc;
 
+.player-gui li {
+	display: inline;
+	margin-left: 4%;
+}
 .mood {
   position: fixed;
   top: 90%;
@@ -111,4 +116,5 @@ opacity: 0;
 	padding: 2%;
 	color: black;
 }
+
 }

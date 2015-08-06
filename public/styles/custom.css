@@ -62,7 +62,11 @@ footer {
   margin-top: -300px;
   margin-left: -150px;
   font-weight: bolder;
-  overflow: scroll; }
+  overflow: scroll;
+  box-shadow: 0 1px 0 1px #ccc; }
+  .popUpwindow .player-gui li {
+    display: inline;
+    margin-left: 4%; }
   .popUpwindow .mood {
     position: fixed;
     top: 90%;
