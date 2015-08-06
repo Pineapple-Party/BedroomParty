@@ -3,23 +3,26 @@ $(document).ready(function() {
  var share = share || {}; 
 
  function build_gallery() {
-    $('.picture-link').each(function(picture) {
-        pictures = []; 
-        pictures.push(picture); 
-    }); 
-    return pictures; 
- } 
+    var pic = $('.pictures-link'); 
+    var pictures = $('.pictures-link').length;
+    share.gallery = [];
+    for (var i=0; i <= (pictures -1); i++) {
 
- 
- // share.noise = $('.noise-link').prop('value');
- share.noise = 'https://soundcloud.com/hhazydreamss/sets/telemarketing';
- console.log(share);  
+        share.gallery.push( $(pic[i]).prop('value') ); 
+    }
 
+    // $.each(pictures.prop('value'), function(picture) {
+    //     pictures.push($(picture).prop('value')); 
+    // }); 
+    // return pictures; 
+
+    }; 
 
  $('.share-btn').click(function() {
  	share.playlist = $('.playlist-link').prop('value');
     //share.noise = $('.noise-link').prop('value'); 
-    share.pictures = build_gallery(); 
+    build_gallery();
+    share.noise = $('#noiseSlider').prop('value'); 
  	$.ajax({
         type: "post",
         url: '/bedroom/share',
@@ -29,12 +32,14 @@ $(document).ready(function() {
     });
 
     function successFunc(data, status) {     
-        alert('success');
+        console.log('success'); 
     }
 
     function errorFunc() {
         alert('error');
     }
 });
+
+
 
  }); 

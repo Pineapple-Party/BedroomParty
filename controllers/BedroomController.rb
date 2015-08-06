@@ -14,6 +14,14 @@ class BedroomController < ApplicationController
 		@set.noise_link 
 	end 
 
+	def bedroom
+		@bedroom
+	end
+
+	def set_bedroom(room)
+		@bedroom = room
+	end
+
 	def create_room(playlist, noise, user_id)	
 		@bedroom = Bedroom.new 
 		@bedroom.env_playlist_id = playlist 
@@ -21,8 +29,9 @@ class BedroomController < ApplicationController
 		@bedroom.env_creator_id = user_id 
 
 		@bedroom.save
-		puts 'bedroom saved' 
-		puts @bedroom 
+		set_bedroom(@bedroom.id)
+		puts 'bedroom saved'
+		puts @bedroom
 	end 
 
 	# def build_gallery(pictures)
@@ -35,22 +44,23 @@ class BedroomController < ApplicationController
 
 
 	get '/' do
-		puts is_not_authenticated?
-		puts session[:user]
-		if is_not_authenticated? == false
-			return erb :bedroom
-
-		else
-			@message = 'No access little buddy... You must login'
-			return erb :login
-		end
+		#no time to move things over properly
+		redirect 'bedroom/test'
 
 	end
 
  	get '/test' do 
-  		@pictures = Picture.find_by params[:id => 1]
-  		puts @pictures.picture_link
-		erb :test 
+ 		puts is_not_authenticated?
+		puts session[:user]
+		if is_not_authenticated? == false
+			#set default image based on user 
+			@pictures = Picture.find_by params[:id => 1]
+  			puts @pictures.picture_link
+			return erb :test 
+		else
+			@message = 'No access little buddy... You must login'
+			return erb :login
+		end
 	end 
 
 	get '/share' do 
@@ -69,21 +79,25 @@ class BedroomController < ApplicationController
 		# create models for 'noises'
 		@new_noise = Noise.new
 		@new_noise.noise_link = @noise
-		@new_noise.noise_name = 'fake_name'
+		@new_noise.noise_name = params[:noise]
 		@new_noise.save
 		# create models for 'playlist'
 		@new_playlist = Playlist.new 
 		@new_playlist.playlist_link = @playlist 
 		@new_playlist.save 
-		# create new images 
-		params[:pictures].each do |pic|
-			@picture = Picture.new 
-			@picture.picture_link = pic 
-			@picture.save 
-		end 
 
-		#create new bedroom 
+		# create new bedroom 
 		create_room(@new_playlist.id, @new_noise.id, @user_id)
+
+		# create new images 
+		@pic_list = params[:gallery]
+		@pic_list.each do |pic|
+			@picture = Picture.new 
+			@picture.picture_link = pic
+			@picture.fk_bedroom_id = bedroom 
+			@picture.save 
+		end
+		
 		status 200 
 	end 
 		#@pictures = {} #link : bedroom id 
