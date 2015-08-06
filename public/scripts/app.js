@@ -48,10 +48,14 @@ $(document).ready(function() {
 
 
 	 	$('.playlist-btn-updt').click(function() {
-	 		console.log('clicked');
 	 		var link = decodeURIComponent($('.playlist-link').prop('value'));
 	 		//console.log(link);
 	  		widget.load(link);
+	 	});
+
+	 	$('.pictures-btn-updt').click(function() {
+	 		var src = $(this).prev().prop('value');
+	 		$('html').css('background-image', 'url(' + src + ')');
 	 	});
 
 
@@ -102,9 +106,8 @@ $(document).ready(function() {
 			$('#noiseSlider').change();
 
 			$('.addimage').on('click', function() {
-				$('.picLinks').append('<input class="pictures-link" type="text" name="picture_link" value="" placeholder="picture link">').append('<button class="playlist-btn-updt">update</button><');
+				$('.picLinks').append('<input class="pictures-link" type="text" name="picture_link" value="" placeholder="picture link">').append('<button class="pictures-btn-updt">update</button><');
 			});
 
 			// set css image 
-			 $('html').css('background-image', 'url(' +  + ')');
 });

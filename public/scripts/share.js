@@ -32,7 +32,7 @@ $(document).ready(function() {
     });
 
     function successFunc(data, status) {     
-        $('html').css('background-image', 'url(' + share.gallery[0] + ')');
+        console.log('success'); 
     }
 
     function errorFunc() {
