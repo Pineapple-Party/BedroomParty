@@ -104,4 +104,7 @@ $(document).ready(function() {
 			$('.addimage').on('click', function() {
 				$('.picLinks').append('<input class="pictures-link" type="text" name="picture_link" value="" placeholder="picture link">').append('<button class="playlist-btn-updt">update</button><');
 			});
+
+			// set css image 
+			 $('html').css('background-image', 'url(' +  + ')');
 });
