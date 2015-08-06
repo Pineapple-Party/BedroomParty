@@ -73,28 +73,34 @@ opacity: 0;
 /*pop up window*/
 
 .popUpwindow {
-  background-color: green;
+  background-image: url('http://i.imgur.com/cVB9VFRm.jpg');
+	background-size: cover;
+	padding: 4%;
 	height: 200px;
   width:394px;
 	display: none;
 	margin-top: -300px;
   margin-left: -150px;
+	font-weight: bolder;
 
 .mood {
   position: fixed;
   top: 90%;
-  left: 50%; 
+  left: 50%;
 }
 
 #soundcloud_widget {
-  display: none; 
+  display: none;
 }
 
 .playlist-update {
-  display: none; 
+  display: none;
 }
 
 .player-options {
-  display: none;  
+  display: none;
+}
+.playlist-btn-updt {
+	color: yellow;
 }
 }

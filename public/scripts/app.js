@@ -87,4 +87,19 @@ $(document).ready(function() {
 			$(".popUpwindow").slideToggle();
 		})
 
+
+
+			var currentNoise = $('#currentNoise');
+			var noise = ['telemarketing', 'waves', 'chatter', 'forest', 'bees', 'creepy', 'shamans', 'nature', 'rain'];
+			$('#noiseSlider').change(function(){
+
+					currentNoise.html(noise[this.value - 1]).css('color', 'green');
+
+
+			});
+
+
+			$('#noiseSlider').change();
+
+
 });
