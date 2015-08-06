@@ -5,9 +5,6 @@ class BedroomController < ApplicationController
 
 	end
 
-
-	enable :sessions
-
 	def is_not_authenticated?
 		session[:user].nil?
 	end
@@ -23,7 +20,7 @@ class BedroomController < ApplicationController
 		@bedroom.env_noise_id = noise 
 		@bedroom.env_creator_id = user_id 
 
-		bedroom.save
+		@bedroom.save
 		puts 'bedroom saved' 
 		puts @bedroom 
 	end 
@@ -61,14 +58,26 @@ class BedroomController < ApplicationController
 	end 
 
 	post '/share' do
-		puts params
+
 		#get pictures, playlist, and currently set noise
 		@playlist = params[:playlist]
 		@noise = set_noise_link(params[:noise])	
-		@current_user = session[:user]
-		@user_id = @current_user.user_name #grab username 
-		
-		create_room(@playlist, @noise, @user_id)
+		@user = session[:user]
+		#grab username 
+		@user_id = @user.id
+
+		# create models for 'noises'
+		@new_noise = Noise.new
+		@new_noise.noise_link = @noise
+		@new_noise.noise_name = 'fake_name'
+		@new_noise.save
+		# create models for 'playlist'
+		@new_playlist = Playlist.new 
+		@new_playlist.playlist_link = @playlist 
+		@new_playlist.save 
+
+		#create new bedroom 
+		create_room(@new_playlist.id, @new_noise.id, @user_id)
 		status 200 
 	end 
 		#@pictures = {} #link : bedroom id 

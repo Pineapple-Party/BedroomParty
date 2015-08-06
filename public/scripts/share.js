@@ -1,13 +1,15 @@
 $(document).ready(function() {
 
  var share = share || {}; 
- share.playlist ="pl";
- share.noise = "noise";
- share.user_id = "id";
+
+ 
+ // share.noise = $('.noise-link').prop('value');
+ share.noise = 'https://soundcloud.com/hhazydreamss/sets/telemarketing';
  console.log(share);  
 
 
  $('.share-btn').click(function() {
+ 	share.playlist = $('.playlist-link').prop('value');
  	$.ajax({
         type: "post",
         url: '/bedroom/share',
