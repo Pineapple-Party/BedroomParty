@@ -24,6 +24,8 @@ class BedroomController < ApplicationController
 		@bedroom.env_creator_id = user_id 
 
 		bedroom.save
+		puts 'bedroom saved' 
+		puts @bedroom 
 	end 
 
 	# def build_gallery(pictures)
@@ -54,14 +56,20 @@ class BedroomController < ApplicationController
 		erb :test 
 	end 
 
+	get '/share' do 
+		puts share 
+	end 
+
 	post '/share' do
-		#get pictures, playlist, and currently set noise 
-		@playlist = params[:playlist_url] 
-		@noise = set_noise_link(params[:noise_name])
-		@user_id = session[:user]
-		#session.id = @user 
-		#@user_id = session.id 
+		puts params
+		#get pictures, playlist, and currently set noise
+		@playlist = params[:playlist]
+		@noise = set_noise_link(params[:noise])	
+		@current_user = session[:user]
+		@user_id = @current_user.user_name #grab username 
+		
 		create_room(@playlist, @noise, @user_id)
+		status 200 
 	end 
 		#@pictures = {} #link : bedroom id 
 

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
 
 
-	enable :sessions
+	#enable :sessions
 
 	def does_user_exist(username)
 		user = User.find_by(:user_name => username.to_s)
