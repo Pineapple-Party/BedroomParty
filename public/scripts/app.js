@@ -114,16 +114,18 @@ $(document).ready(function() {
 			$('.playlist-btn-sound span').on('click', function() {
 				$(this).toggleClass('fa-volume-down');
 				$(this).toggleClass('fa-volume-up');
-			}); 
-			
+
+
+		});
+
+
+
+
+
 			var addImageOpt = '<input class="pictures-link" type="text" name="picture_link" value="" placeholder="picture link">' + '<button class="pictures-btn-updt">update</button>' + '<button class="addimage" type="button" name="picture_link">+</button>';
 			$('.picLinks').on('click', '.addimage', function() {
 
 				$('.picLinks').append(addImageOpt);
 
 			});
-
-
-
-			// set css image
-});
+	});
