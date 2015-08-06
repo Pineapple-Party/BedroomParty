@@ -1,8 +1,9 @@
 $(document).ready(function() {
   
-    var imageID = 'eYAJ7Ya';
-    var galleryAPI = "https://api.imgur.com/3/gallery/image/" + imageID;
     
+    var galleryAPI = "";
+    
+    $('.pictures-link').prop('value'); 
     function imgurCall() {
       $.ajax({
           url: galleryAPI,

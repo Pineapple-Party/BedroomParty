@@ -4,10 +4,11 @@ $(document).ready(function() {
 
  function build_gallery() {
     var pic = $('.pictures-link'); 
-    var pictures = ($('.pictures-link').length - 1);
-    for (var i=0; i < pictures; i++) {
+    var pictures = $('.pictures-link').length;
+    share.gallery = [];
+    for (var i=0; i <= (pictures -1); i++) {
 
-        console.log($(pic[i]).prop('value')); 
+        share.gallery.push( $(pic[i]).prop('value') ); 
     }
 
     // $.each(pictures.prop('value'), function(picture) {
