@@ -53,12 +53,16 @@ footer {
     -webkit-transform: translate(150px, 800px) rotateZ(360deg); } }
 /*pop up window*/
 .popUpwindow {
-  background-color: green;
+  background-image: url("http://i.imgur.com/cVB9VFRm.jpg");
+  background-size: cover;
+  padding: 7%;
   height: 200px;
   width: 394px;
   display: none;
   margin-top: -300px;
-  margin-left: -150px; }
+  margin-left: -150px;
+  font-weight: bolder;
+  overflow: scroll; }
   .popUpwindow .mood {
     position: fixed;
     top: 90%;
@@ -69,5 +73,13 @@ footer {
     display: none; }
   .popUpwindow .player-options {
     display: none; }
+  .popUpwindow .playlist-btn-updt {
+    color: yellow;
+    background-color: green; }
+  .popUpwindow .addimage {
+    font-size: 2em;
+    border: none;
+    padding: 2%;
+    color: black; }
 
 /*# sourceMappingURL=custom.css.map */

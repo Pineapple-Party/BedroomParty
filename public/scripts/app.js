@@ -87,4 +87,21 @@ $(document).ready(function() {
 			$(".popUpwindow").slideToggle();
 		})
 
+
+
+			var currentNoise = $('#currentNoise');
+			var noise = ['telemarketing', 'waves', 'chatter', 'forest', 'bees', 'creepy', 'shamans', 'nature', 'rain', 'none'];
+			$('#noiseSlider').change(function(){
+
+					currentNoise.html(noise[this.value - 1]).css('color', 'green');
+
+
+			});
+
+
+			$('#noiseSlider').change();
+
+			$('.addimage').on('click', function() {
+				$('.picLinks').append('<input class="pictures-link" type="text" name="picture_link" value="" placeholder="picture link">').append('<button class="playlist-btn-updt">update</button><');
+			});
 });

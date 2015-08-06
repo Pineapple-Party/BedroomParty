@@ -12,7 +12,7 @@ CREATE TABLE bedrooms (id SERIAL PRIMARY KEY, env_creator_id INTEGER REFERENCES 
 
 INSERT INTO playlists (playlist_link) VALUES ('https://soundcloud.com/hhazydreamss/sets/test');
 INSERT INTO bedrooms (env_creator_id, env_playlist_id, env_noise_id) VALUES (1,1,1);
-INSERT INTO pictures (picture_link, fk_bedroom_id) VALUES ('http://imgur.com/gallery/tQdxm99', 1); 
+INSERT INTO pictures (picture_link, fk_bedroom_id) VALUES ('http://imgur.com/gallery/tQdxm99', 3); 
 
 INSERT INTO noises (noise_link, noise_name) VALUES ('https://soundcloud.com/hhazydreamss/sets/telemarketing', 'telemarketing');
 INSERT INTO noises (noise_link, noise_name) VALUES ('https://soundcloud.com/hhazydreamss/sets/waves', 'waves');
