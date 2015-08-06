@@ -75,13 +75,14 @@ opacity: 0;
 .popUpwindow {
   background-image: url('http://i.imgur.com/cVB9VFRm.jpg');
 	background-size: cover;
-	padding: 4%;
+	padding: 7%;
 	height: 200px;
   width:394px;
 	display: none;
 	margin-top: -300px;
   margin-left: -150px;
 	font-weight: bolder;
+	overflow: scroll;
 
 .mood {
   position: fixed;
@@ -102,5 +103,12 @@ opacity: 0;
 }
 .playlist-btn-updt {
 	color: yellow;
+	background-color: green;
+}
+.addimage {
+	font-size: 2em;
+	border: none;
+	padding: 2%;
+	color: black;
 }
 }

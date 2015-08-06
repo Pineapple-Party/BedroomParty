@@ -55,13 +55,14 @@ footer {
 .popUpwindow {
   background-image: url("http://i.imgur.com/cVB9VFRm.jpg");
   background-size: cover;
-  padding: 4%;
+  padding: 7%;
   height: 200px;
   width: 394px;
   display: none;
   margin-top: -300px;
   margin-left: -150px;
-  font-weight: bolder; }
+  font-weight: bolder;
+  overflow: scroll; }
   .popUpwindow .mood {
     position: fixed;
     top: 90%;
@@ -73,6 +74,12 @@ footer {
   .popUpwindow .player-options {
     display: none; }
   .popUpwindow .playlist-btn-updt {
-    color: yellow; }
+    color: yellow;
+    background-color: green; }
+  .popUpwindow .addimage {
+    font-size: 2em;
+    border: none;
+    padding: 2%;
+    color: black; }
 
 /*# sourceMappingURL=custom.css.map */
