@@ -105,9 +105,14 @@ $(document).ready(function() {
 
 			$('#noiseSlider').change();
 
-			$('.addimage').on('click', function() {
-				$('.picLinks').append('<input class="pictures-link" type="text" name="picture_link" value="" placeholder="picture link">').append('<button class="pictures-btn-updt">update</button><');
+			var addImageOpt = '<input class="pictures-link" type="text" name="picture_link" value="" placeholder="picture link">' + '<button class="pictures-btn-updt">update</button>' + '<button class="addimage" type="button" name="picture_link">+</button>'; 
+			$('.picLinks').on('click', '.addimage', function() {
+				
+				$('.picLinks').append(addImageOpt); 
+				
 			});
+
+
 
 			// set css image 
 });
