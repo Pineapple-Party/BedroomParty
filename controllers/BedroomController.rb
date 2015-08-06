@@ -12,6 +12,26 @@ class BedroomController < ApplicationController
 		session[:user].nil?
 	end
 
+	def set_noise_link(name)
+		@set = Noise.find_by params[:noise_name => name]
+		@set.noise_link 
+	end 
+
+	def create_room(playlist, noise, user_id)	
+		@bedroom = Bedroom.new 
+		@bedroom.env_playlist_id = playlist 
+		@bedroom.env_noise_id = noise 
+		@bedroom.env_creator_id = user_id 
+
+		bedroom.save
+	end 
+
+	# def build_gallery(pictures)
+	# 	pictures.each_pair { |key, value|
+	# 		@bedroom.
+
+	# 	}
+
 
 
 
@@ -26,16 +46,24 @@ class BedroomController < ApplicationController
 			return erb :login
 		end
 
-		end
+	end
 
-  get '/test' do 
-  	@pictures = Picture.find_by params[:id => 1]
-  	puts @pictures.picture_link
-	erb :test 
-	# print the html for the player widget
-	
-	
-end 
+ 	get '/test' do 
+  		@pictures = Picture.find_by params[:id => 1]
+  		puts @pictures.picture_link
+		erb :test 
+	end 
+
+	post '/share' do
+		#get pictures, playlist, and currently set noise 
+		@playlist = params[:playlist_url] 
+		@noise = set_noise_link(params[:noise_name])
+		@user_id = session[:user]
+		#session.id = @user 
+		#@user_id = session.id 
+		create_room(@playlist, @noise, @user_id)
+	end 
+		#@pictures = {} #link : bedroom id 
 
 
 end
