@@ -76,7 +76,8 @@ class BedroomController < ApplicationController
 		@new_playlist.playlist_link = @playlist 
 		@new_playlist.save 
 		# create new images 
-		params[:pictures].each do |pic|
+		@pic_list = params[:gallery]
+		@pic_list.each do |pic|
 			@picture = Picture.new 
 			@picture.picture_link = pic 
 			@picture.save 

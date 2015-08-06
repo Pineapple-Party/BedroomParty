@@ -71,8 +71,6 @@ footer {
     position: fixed;
     top: 90%;
     left: 50%; }
-  .popUpwindow #soundcloud_widget {
-    display: none; }
   .popUpwindow .playlist-update {
     display: none; }
   .popUpwindow .player-options {

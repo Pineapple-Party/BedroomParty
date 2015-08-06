@@ -15,12 +15,13 @@ $(document).ready(function() {
     //     pictures.push($(picture).prop('value')); 
     // }); 
     // return pictures; 
+
     }; 
 
  $('.share-btn').click(function() {
  	share.playlist = $('.playlist-link').prop('value');
     //share.noise = $('.noise-link').prop('value'); 
-    share.pictures = build_gallery();
+    build_gallery();
     share.noise = $('#noiseSlider').prop('value'); 
  	$.ajax({
         type: "post",
@@ -31,12 +32,14 @@ $(document).ready(function() {
     });
 
     function successFunc(data, status) {     
-        alert('success');
+        $('html').css('background-image', 'url(' + share.gallery[0] + ')');
     }
 
     function errorFunc() {
         alert('error');
     }
 });
+
+
 
  }); 

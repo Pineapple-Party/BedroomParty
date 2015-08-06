@@ -25,4 +25,6 @@ $(document).ready(function() {
   imgurr.src = imgurCall(); 
   console.log(imgurr.src); 
 
+  
+  $('#soundcloud_widget').css('display', 'none'); 
 });
