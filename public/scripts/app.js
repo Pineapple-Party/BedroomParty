@@ -119,7 +119,7 @@ $(document).ready(function() {
 		});
 
 
-			});
+
 
 
 			var addImageOpt = '<input class="pictures-link" type="text" name="picture_link" value="" placeholder="picture link">' + '<button class="pictures-btn-updt">update</button>' + '<button class="addimage" type="button" name="picture_link">+</button>';
@@ -128,5 +128,4 @@ $(document).ready(function() {
 				$('.picLinks').append(addImageOpt);
 
 			});
-
 	});
