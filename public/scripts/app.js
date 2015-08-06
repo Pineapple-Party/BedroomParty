@@ -102,6 +102,18 @@ $(document).ready(function() {
 			$('#noiseSlider').change();
 
 			$('.addimage').on('click', function() {
-				$('.picLinks').append('<input class="pictures-link" type="text" name="picture_link" value="" placeholder="picture link">').append('<button class="playlist-btn-updt">update</button><');
+				$('.picLinks').append('<input class="pictures-link" type="text" name="picture_link" value="" placeholder="picture link">').append('<button class="playlist-btn-updt">update</button>')
+			});
+
+	
+
+			$('.playlist-btn-play span').on('click', function() {
+				$(this).toggleClass('fa-play-circle-o');
+				$(this).toggleClass("fa-pause");
+			});
+
+			$('.playlist-btn-sound span').on('click', function() {
+				$(this).toggleClass('fa-volume-down');
+				$(this).toggleClass('fa-volume-up');
 			});
 });
