@@ -58,11 +58,10 @@ class BedroomController < ApplicationController
   			puts @pictures.picture_link
 
   			@default = {}
-  			@bed = Bedroom.where(env_creator_id: session[:user]).first(1)
-			@default.playlist = Playlist.where(id: @bed.read_attribute(env_creator_id))
+  			@bed = Bedroom.where(env_creator_id: session[:user]).first(1)[0]
+			@default[:playlist] = Playlist.where(id: @bed.read_attribute(:env_creator_id))
 			#@default.playlist.to_json(include: :playlist_link)
-			puts '******************'
-			puts @default.playlist  
+			puts @default[:playlist][playlist_link]
 			status 200 
 
 
