@@ -16,8 +16,13 @@ footer {
   top: 90%;
   left: 35%; }
 
+html, body {
+  height: 100%; }
+
 html {
-  background-size: cover; }
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
 
 .fallingPineapples {
   width: 100%;
@@ -81,6 +86,9 @@ html {
   .popUpwindow .player-options {
     display: none; }
   .popUpwindow .playlist-btn-updt {
+    color: yellow;
+    background-color: green; }
+  .popUpwindow .pictures-btn-updt {
     color: yellow;
     background-color: green; }
   .popUpwindow .addimage {
