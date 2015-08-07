@@ -6,9 +6,11 @@ $(document).ready(function() {
 		});
 
 	 	var widget = SC.Widget(document.getElementById('soundcloud_widget'));
+
 	 		widget.bind(SC.Widget.Events.READY, function() {
 	 		widget.setVolume(80); //set default volume
 	  	 	console.log('Ready...'); //playlist is loaded & ready
+
 	 	});
 
 	 		$('.playlist-btn-play').click(function() {
@@ -51,7 +53,9 @@ $(document).ready(function() {
 	 	$('.playlist-btn-updt').click(function() {
 	 		var link = decodeURIComponent($('.playlist-link').prop('value'));
 	 		//console.log(link);
-	  		widget.load(link);
+
+				widget.load(link);
+
 				$('.playlist-btn-play span').addClass('fa-play-circle-o');
 				$('.playlist-btn-play span').removeClass("fa-pause");
 				$('.playlist-btn-sound span').addClass('fa-volume-down');
