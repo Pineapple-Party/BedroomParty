@@ -57,12 +57,12 @@ class BedroomController < ApplicationController
 			@pictures = Picture.find_by params[:id => 1]
   			puts @pictures.picture_link
 
-  			@default = {}
-  			@bed = Bedroom.where(env_creator_id: session[:user]).first(1)[0]
-			@default[:playlist] = Playlist.where(id: @bed.read_attribute(:env_creator_id))
+  			#@default = {}
+  			#@bed = Bedroom.where(env_creator_id: session[:user]).first(1)[0]
+			#@default[:playlist] = Playlist.where(id: @bed.read_attribute(:env_creator_id))
 			#@default.playlist.to_json(include: :playlist_link)
 			#puts @default[:playlist][playlist_link]
-			@wtf = 'wtf'
+			#@wtf = 'wtf'
 			status 200 
 
 
