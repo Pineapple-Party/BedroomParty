@@ -258,9 +258,11 @@ $(document).ready(function() {
 			}
 
 	 		//console.log(link);
-	  		
+	  		$('#soundcloud_widget_noise').css('display', 'none');
 	  
     });
+	
+	$('#soundcloud_widget_noise').css('display', 'none');
 
 });
 
