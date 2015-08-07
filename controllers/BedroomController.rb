@@ -56,6 +56,16 @@ class BedroomController < ApplicationController
 			#set default image based on user 
 			@pictures = Picture.find_by params[:id => 1]
   			puts @pictures.picture_link
+
+  			@default = {}
+  			@bed = Bedroom.where(env_creator_id: session[:user]).first(1)
+			@default.playlist = Playlist.where(id: @bed.read_attribute(env_creator_id))
+			#@default.playlist.to_json(include: :playlist_link)
+			puts '******************'
+			puts @default.playlist  
+			status 200 
+
+
 			return erb :test 
 		else
 			@message = 'No access little buddy... You must login'
@@ -98,7 +108,6 @@ class BedroomController < ApplicationController
 			@picture.save 
 		end
 		
-		status 200 
 	end 
 		#@pictures = {} #link : bedroom id 
 
