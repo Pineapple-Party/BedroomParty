@@ -11,6 +11,19 @@ $(document).ready(function() {
 	  	 	console.log('Ready...'); //playlist is loaded & ready
 	 	});
 
+	 	//noise 
+
+	 	var widgetN = SC.Widget(document.getElementById('soundcloud_widget_noise'));
+	 		widgetN.bind(SC.Widget.Events.READY, function() {
+	 		widgetN.setVolume(80); //set default volume
+	  	 	console.log('Noise ready...'); //playlist is loaded & ready
+	 	});
+
+
+
+
+
+	 	// end noise 
 	 		$('.playlist-btn-play').click(function() {
 
 	 			widget.toggle();
@@ -30,6 +43,7 @@ $(document).ready(function() {
 
 	 		widget.getSounds(function(songs) {
 	 			app.length = (songs.length - 1);
+	 			console.log(songs); 
 	 			//return songs.length;
 	 		});
 	 	});
@@ -46,6 +60,34 @@ $(document).ready(function() {
 
 	 //on click, load new sc link to widget ]
 
+	 // noise spacing _______________________
+
+		app.noisecurrent = 0;
+	 	app.noiselength = 0;
+	 	widgetN.bind(SC.Widget.Events.PLAY, function() {
+	 		widgetN.getCurrentSoundIndex(function(song) {
+	 			app.noisecurrent = song;
+	 			//return song;
+	 			});
+
+	 		widgetN.getSounds(function(songs) {
+	 			app.noiselength = (songs.length - 1);
+	 			console.log(songs); 
+	 			//return songs.length;
+	 		});
+	 	});
+
+	 	 widgetN.bind(SC.Widget.Events.FINISH, function() {
+	 		 	//console.log(app.current);
+	 		 	//console.log(app.length);
+	 		 	if (app.noisecurrent === app.noiselength) {
+	 		 		widgetN.skip(0);
+	 		 	}
+	 		 });
+
+
+	 // end noise 
+
 
 
 	 	$('.playlist-btn-updt').click(function() {
@@ -57,7 +99,12 @@ $(document).ready(function() {
 				$('.playlist-btn-sound span').addClass('fa-volume-down');
 				$('.playlist-btn-sound span').removeClass('fa-volume-up');
 
+				widget.bind(SC.Widget.Events.READY, function() {
+						widget.toggle(); 
+					});
 	 	});
+
+	 	
 
 	 	$('.picLinks').on('click', '.pictures-btn-updt', function() {
 
@@ -124,14 +171,97 @@ $(document).ready(function() {
 
 		});
 
-
-
-
-
 			var addImageOpt = '<input class="pictures-link" type="text" name="picture_link" value="" placeholder="picture link">' + '<button class="pictures-btn-updt">update</button>' + '<button class="addimage" type="button" name="picture_link">+</button>';
 			$('.picLinks').on('click', '.addimage', function() {
 
 				$('.picLinks').append(addImageOpt);
 
 			});
-	});
+
+
+			//$('.sc-stuff').on('change', '#noiseSlider', function() {
+	$('#noiseSlider').change(function() {
+			var noisearr = ['telemarketing', 'waves', 'chatter', 'forest', 'bees', 'creepy', 'shamans', 'nature', 'rain', 'none'];
+			var noiselink = "";
+			var slider = $('#noiseSlider').prop('value')
+			switch(slider) {
+				case '1':
+					noiselink = 'https://soundcloud.com/hhazydreamss/sets/telemarketing';	
+					widgetN.load(noiselink);
+					widgetN.bind(SC.Widget.Events.READY, function() {
+						widgetN.toggle(); 
+					});
+					break; 
+				case '2':
+					noiselink = 'https://soundcloud.com/hhazydreamss/sets/waves';
+					widgetN.load(noiselink);
+					widgetN.bind(SC.Widget.Events.READY, function() {
+						widgetN.toggle(); 
+					});
+					break; 
+				case '3': 
+					noiselink = 'https://soundcloud.com/hhazydreamss/sets/chatter';
+					widgetN.load(noiselink);
+					widgetN.bind(SC.Widget.Events.READY, function() {
+						widgetN.toggle(); 
+					});
+					break;
+				case '4':
+					noiselink = 'https://soundcloud.com/hhazydreamss/sets/forest';
+					widgetN.load(noiselink);
+					widgetN.bind(SC.Widget.Events.READY, function() {
+						widgetN.toggle(); 
+					});
+					break; 
+				case '5': 
+					noiselink = 'https://soundcloud.com/hhazydreamss/sets/bees';
+					widgetN.load(noiselink);
+					widgetN.bind(SC.Widget.Events.READY, function() {
+						widgetN.toggle(); 
+					});
+					break; 
+				case '6':
+					noiselink = 'https://soundcloud.com/jimbojones1-3/sets/creepyghost';
+					widgetN.load(noiselink);
+					widgetN.bind(SC.Widget.Events.READY, function() {
+						widgetN.toggle(); 
+					});
+					break; 
+				case '7':
+					noiselink = 'https://soundcloud.com/jimbojones1-3/sets/amazon-shamans';
+					widgetN.load(noiselink);
+					widgetN.bind(SC.Widget.Events.READY, function() {
+						widgetN.toggle(); 
+					});
+					break; 
+				case '8': 
+					noiselink = 'https://soundcloud.com/jimbojones1-3/sets/nature'; 
+					widgetN.load(noiselink);
+					widgetN.bind(SC.Widget.Events.READY, function() {
+						widgetN.toggle(); 
+					});
+					break; 
+				case '9': 
+					noiselink = 'https://soundcloud.com/jimbojones1-3/sets/rain-day-playlist'; 
+					widgetN.load(noiselink);
+					widgetN.bind(SC.Widget.Events.READY, function() {
+						widgetN.toggle(); 
+					});
+					break; 
+				case '10':
+					widgetN.pause(); 
+					console.log('10');
+					break; 
+				
+				default: 
+					widgetN.pause(); 
+			}
+
+	 		//console.log(link);
+	  		
+	  
+    });
+
+});
+
+       

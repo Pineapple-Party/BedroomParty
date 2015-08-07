@@ -11,9 +11,15 @@
   </ul>
 
 </header>
-<section class="row">
+<section class="row sc-stuff">
   <iframe id="soundcloud_widget"
       src="http://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/39804767&show_artwork=false&liking=false&sharing=false&auto_play=true"
+      width="420"
+      height="120"
+      frameborder="no"></iframe>
+
+        <iframe id="soundcloud_widget_noise"
+      src="http://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/165000342&show_artwork=false&liking=false&sharing=false&auto_play=true"
       width="420"
       height="120"
       frameborder="no"></iframe>
@@ -38,9 +44,8 @@
         <input id="noiseSlider" type="range" min="1" max="10" name="noise_name" value=""> <span id="currentNoise"></span>
         <div class="row">
           <div class="picLinks">
-            <input class="pictures-link" type="text" name="picture_link" value="" placeholder="picture link">
-            <button class="pictures-btn-updt">update</button>
-            <button class="addimage" type="button" name="picture_link">+</button>
+          <input class="pictures-link" type="text" name="picture_link" value="" placeholder="picture link">
+          <button class="pictures-btn-updt">update</button><button class="addimage" type="button" name="picture_link">+</button>
           </div>
         </div>
         <ul class="player-gui">
