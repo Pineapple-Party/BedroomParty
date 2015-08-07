@@ -18,9 +18,14 @@ footer {
 	top:  90%;
 	left:  35%;
 }
+html, body {
+	height:100%;
+}
 
 html {
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-position:center center;
 }
 
 
@@ -111,6 +116,11 @@ opacity: 0;
   display: none;
 }
 .playlist-btn-updt {
+	color: yellow;
+	background-color: green;
+}
+
+.pictures-btn-updt {
 	color: yellow;
 	background-color: green;
 }

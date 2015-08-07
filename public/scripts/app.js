@@ -12,6 +12,7 @@ $(document).ready(function() {
 	 	});
 
 	 		$('.playlist-btn-play').click(function() {
+
 	 			widget.toggle();
 	 		//$('this').attr()
 	 		});
@@ -51,6 +52,11 @@ $(document).ready(function() {
 	 		var link = decodeURIComponent($('.playlist-link').prop('value'));
 	 		//console.log(link);
 	  		widget.load(link);
+				$('.playlist-btn-play span').addClass('fa-play-circle-o');
+				$('.playlist-btn-play span').removeClass("fa-pause");
+				$('.playlist-btn-sound span').addClass('fa-volume-down');
+				$('.playlist-btn-sound span').removeClass('fa-volume-up');
+
 	 	});
 
 	 	$('.picLinks').on('click', '.pictures-btn-updt', function() {
