@@ -12,9 +12,9 @@ require ('./models/PlaylistsModel’)
 require ('./models/UserModel’)
 
 
-#Dir.glob('./{controllers,models}/*.rb').each {
+# Dir.glob('./{controllers,models}/*.rb').each {
 #	|file| require file 
-#}
+# }
 
 map('/') { run HomeController }
 map('/users') { run UsersController }
