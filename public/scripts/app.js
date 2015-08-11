@@ -263,6 +263,13 @@ $(document).ready(function() {
 			$('#soundcloud_widget_noise').css('display', 'none');
 	 		//console.log(link);
 
+	  		$('#soundcloud_widget_noise').css('display', 'none');
+
+    });
+
+	$('#soundcloud_widget_noise').css('display', 'none');
+
+
 
     });
 		$('#soundcloud_widget_noise').css('display', 'none');

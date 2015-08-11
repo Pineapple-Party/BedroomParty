@@ -1,6 +1,22 @@
 # BedroomParty
 An application that lets you create and share "bedrooms"
 
+### How to Install and run
+
+1.  Clone this repository
+2.  Navigate to the directory it is stored in.
+3.  'bundle' the Gemfile
+4.  Run the migrations.sql file in Postgres to generate the required databases
+5. bundle exec rackup
+6.  go to localhost:9292
+
+
+Pineapple image
+![pineapple](http://i.imgur.com/rK7RTdCm.png?1)
+
+Background Pop-up image
+![moarpineapple](http://i.imgur.com/cVB9VFRm.jpg)
+
 # Bedrooms
 Users can log in and begin to create bedrooms or look through the share gallery to 
 see what others have created. Each bedroom contains a playlist, gallery, and noise setting. 
@@ -12,6 +28,8 @@ gallery slideshow, and choose a noise via the slider.
 # Sharing
 Clicking the share button will save your bedroom and host it on the share gallery where everyone
 can see your room(s). 
+
+
 
 # Technologies 
 

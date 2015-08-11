@@ -27,4 +27,5 @@ $(document).ready(function() {
 
   
   $('#soundcloud_widget').css('display', 'none'); 
+   
 });
