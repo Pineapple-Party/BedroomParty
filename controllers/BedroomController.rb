@@ -55,7 +55,7 @@ class BedroomController < ApplicationController
 		if is_not_authenticated? == false
 			#set default image based on user 
 			@pictures = Picture.find_by params[:id => 1]
-  			puts @pictures.picture_link
+  			#puts @pictures.picture_link
 
   			#@default = {}
   			#@bed = Bedroom.where(env_creator_id: session[:user]).first(1)[0]

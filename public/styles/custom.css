@@ -79,6 +79,8 @@ html {
     position: fixed;
     top: 90%;
     left: 50%; }
+  .popUpwindow button .mood {
+    color: pink; }
   .popUpwindow #soundcloud_widget {
     display: none; }
   .popUpwindow .playlist-update {
