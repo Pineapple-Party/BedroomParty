@@ -1,3 +1,4 @@
+
 class BedroomController < ApplicationController
 
 	def test(params)
@@ -57,12 +58,12 @@ class BedroomController < ApplicationController
 			@pictures = Picture.find_by params[:id => 1]
   			puts @pictures.picture_link
 
-  			@default = {}
-  			@bed = Bedroom.where(env_creator_id: session[:user]).first(1)
-		#	@default.playlist = Playlist.where(id: @bed.read_attribute(env_creator_id))
+  		#	@default = {}
+  		#	@bed = Bedroom.where(env_creator_id: session[:user]).first(1)[0]
+			#@default[:playlist] = Playlist.where(id: @bed.read_attribute(:env_creator_id))
 			#@default.playlist.to_json(include: :playlist_link)
-			puts '******************'
-			#puts @default.playlist
+			#puts @default[:playlist][playlist_link]
+			@wtf = 'wtf'
 			status 200
 
 
@@ -74,7 +75,17 @@ class BedroomController < ApplicationController
 	end
 
 	get '/share' do
-		puts share
+		@bedrooms = Bedroom.all
+		@user_bedrooms = @bedrooms.where(env_creator_id: session[:user])
+		@user_bedrooms.each do |room|
+			@playlist[:room] = Playlist.where(id: room[:id])
+			@playlist[:room] = @playlist[:room].read_attribute(:playlist_link)
+			# @gallery = Picture.where(fk_bedroom_id: room[:id])
+			# @gallery = @gallery.read_attribute(:picture_link).all
+			# @noise = Noise.where(id: room[:env_noise_id])
+			# @obj[:room] = @playlist
+		end
+		erb :share
 	end
 
 	post '/share' do
@@ -110,6 +121,15 @@ class BedroomController < ApplicationController
 
 	end
 		#@pictures = {} #link : bedroom id
+
+	post '/noise' do
+		@noiseid = params[:noise]
+		@noise_obj = Noise.find_by params[:id => @noiseid]
+		@noise_link = @noise_obj.read_attribute(:noise_link)
+		puts '%%%#$#'
+		puts @noise_link
+		status 200
+	end
 
 
 end
