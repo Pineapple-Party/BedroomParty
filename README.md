@@ -1,8 +1,8 @@
 #[Bedroom Party](https://github.com/Pineapple-Party/BedroomParty)
 
-Bedroom Party is a web application that lets you create and share "bedrooms". It pulls together images, music, and white noise to create a user's desired experience. 
-
 <img src="http://i.imgur.com/rK7RTdCm.png?1" align="right"> 
+
+Bedroom Party is a web application that lets you create and share "bedrooms". It pulls together images, music, and white noise to create a user's desired experience. 
 
 :notebook_with_decorative_cover: Table of Contents :notebook_with_decorative_cover:
 =================
